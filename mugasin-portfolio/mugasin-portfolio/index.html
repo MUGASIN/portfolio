@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mugasin M — Software Engineer Intern</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">mugasin.dev</div>
+  <ul class="nav-links">
+    <li><a href="javascript:void(0)" onclick="navTo('home')">Home</a></li>
+    <li><a href="javascript:void(0)" onclick="navTo('about')">About</a></li>
+    <li><a href="javascript:void(0)" onclick="navTo('projects')">Projects</a></li>
+    <li><a href="javascript:void(0)" onclick="navTo('experience')">Experience</a></li>
+    <li><a href="javascript:void(0)" onclick="navTo('contact')">Contact</a></li>
+  </ul>
+
+  <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle theme" aria-label="Toggle light/dark theme">
+    <!-- Moon SVG (shown in dark mode) -->
+    <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+    <!-- Sun SVG (shown in light mode) -->
+    <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/>
+      <line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+  </button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div id="home" style="max-width:1100px;margin:0 auto;">
+  <div class="hero">
+    <div class="hero-tag">Available for work · Chennai, Tamil Nadu &nbsp;|&nbsp; Bangalore</div>
+    <h1>
+      <span class="name-first">Mugasin</span><br>
+      <span class="name-last">M.</span>
+    </h1>
+    <p class="hero-desc">
+      <span>Software Engineer Intern at EdgeZen Labs</span> — Python & Django Developer
+      with experience in web development, application testing, and bug identification across
+      web and mobile platforms. Built 4 real-world projects covering backend logic, database design,
+      and role-based authentication. BCA 2025 graduate, eager to contribute and grow through
+      real-world software engineering challenges.
+    </p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="openContact()">Get in touch</button>
+      <button class="btn btn-outline" onclick="navTo('projects')">View projects ↓</button>
+      <button class="btn btn-outline" onclick="openResume()">View Resume</button>
+      <button class="btn btn-outline" onclick="downloadResume()">↓ Download Resume</button>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SKILLS -->
+<section id="about">
+  <div class="section-eyebrow">What I work with</div>
+  <h2 class="section-title">Technical Skills</h2>
+  <div class="skills-grid">
+
+    <div class="skill-cell">
+      <div class="skill-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div class="skill-cell-label">Languages</div>
+      <div class="skill-tags">
+        <span class="tag hl">Python</span>
+        <span class="tag">JavaScript</span>
+      </div>
+    </div>
+
+    <div class="skill-cell">
+      <div class="skill-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="skill-cell-label">Frameworks</div>
+      <div class="skill-tags">
+        <span class="tag hl">Django</span>
+        <span class="tag hl">DRF</span>
+        <span class="tag">Bootstrap</span>
+        <span class="tag">REST APIs</span>
+      </div>
+    </div>
+
+    <div class="skill-cell">
+      <div class="skill-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+      </div>
+      <div class="skill-cell-label">Databases</div>
+      <div class="skill-tags">
+        <span class="tag">MySQL</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">PostgreSQL</span>
+      </div>
+    </div>
+
+    <div class="skill-cell">
+      <div class="skill-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="skill-cell-label">Frontend</div>
+      <div class="skill-tags">
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS3</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Responsive</span>
+      </div>
+    </div>
+
+    <div class="skill-cell">
+      <div class="skill-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="skill-cell-label">Concepts</div>
+      <div class="skill-tags">
+        <span class="tag">OOP</span>
+        <span class="tag">MVT/MVC</span>
+        <span class="tag">CRUD</span>
+        <span class="tag">RBAC</span>
+        <span class="tag">Auth</span>
+      </div>
+    </div>
+
+    <div class="skill-cell">
+      <div class="skill-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <div class="skill-cell-label">Tools</div>
+      <div class="skill-tags">
+        <span class="tag">Git</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">VS Code</span>
+        <span class="tag">PyCharm</span>
+        <span class="tag">Figma</span>
+        <span class="tag">Netlify</span>
+      </div>
+    </div>
+
+    <div class="skill-cell">
+      <div class="skill-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="skill-cell-label">Soft Skills</div>
+      <div class="skill-tags">
+        <span class="tag">Code Debugging</span>
+        <span class="tag">Analytical Thinking</span>
+        <span class="tag">Team Collaboration</span>
+        <span class="tag">Adaptability</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-eyebrow">What I've built</div>
+  <h2 class="section-title">Academic Projects</h2>
+  <div class="projects-list">
+
+    <div class="project-card" onclick="openProject(0)" role="button" tabindex="0" aria-label="View DriveX project details">
+      <div>
+        <div class="project-num">01</div>
+        <div class="project-name">DriveX — Car Rental & Booking System</div>
+        <p class="project-desc">
+          Full-stack car rental platform with user authentication, booking management, and real-time vehicle availability tracking. RESTful backend with mobile-responsive frontend. Built during internship at RETECH Solutions.
+        </p>
+        <div class="project-stack">
+          <span class="stack-chip">Python</span>
+          <span class="stack-chip">Django</span>
+          <span class="stack-chip">MySQL</span>
+          <span class="stack-chip">REST API</span>
+          <span class="stack-chip">Bootstrap</span>
+          <span class="stack-chip">JavaScript</span>
+        </div>
+      </div>
+      <div class="project-arrow">↗</div>
+    </div>
+
+    <div class="project-card" onclick="openProject(1)" role="button" tabindex="0" aria-label="View Trademark Verification System details">
+      <div>
+        <div class="project-num">02</div>
+        <div class="project-name">Trademark Verification System</div>
+        <p class="project-desc">
+          Django application to register, search, and manage trademark records. Features duplicate name detection to prevent conflicting registrations, secure RBAC authentication, and Django ORM-based relational database integration.
+        </p>
+        <div class="project-stack">
+          <span class="stack-chip">Python</span>
+          <span class="stack-chip">Django</span>
+          <span class="stack-chip">Django ORM</span>
+          <span class="stack-chip">RBAC</span>
+          <span class="stack-chip">HTML/CSS</span>
+          <span class="stack-chip">JavaScript</span>
+        </div>
+      </div>
+      <div class="project-arrow">↗</div>
+    </div>
+
+    <div class="project-card" onclick="openProject(2)" role="button" tabindex="0" aria-label="View Plant Nursery Management System details">
+      <div>
+        <div class="project-num">03</div>
+        <div class="project-name">Plant Nursery Management System</div>
+        <p class="project-desc">
+          Full-stack management platform with role-based access for admin and staff. Includes a plant catalog with combined search and filter across 30+ entries, inventory management, and MySQL-backed data operations.
+        </p>
+        <div class="project-stack">
+          <span class="stack-chip">Python</span>
+          <span class="stack-chip">Django</span>
+          <span class="stack-chip">MySQL</span>
+          <span class="stack-chip">OOP</span>
+          <span class="stack-chip">Bootstrap</span>
+          <span class="stack-chip">MVT</span>
+        </div>
+      </div>
+      <div class="project-arrow">↗</div>
+    </div>
+
+    <div class="project-card" onclick="openProject(3)" role="button" tabindex="0" aria-label="View Blog Articles project details">
+      <div>
+        <div class="project-num">04</div>
+        <div class="project-name">Blog Articles</div>
+        <p class="project-desc">
+          A full-stack blogging platform that allows users to create, edit, and manage blog posts with authentication and category features. Built with Django's MVT architecture and SQLite database.
+        </p>
+        <div class="project-stack">
+          <span class="stack-chip">Python</span>
+          <span class="stack-chip">Django</span>
+          <span class="stack-chip">SQLite</span>
+          <span class="stack-chip">Bootstrap</span>
+          <span class="stack-chip">HTML/CSS</span>
+          <span class="stack-chip">Auth</span>
+        </div>
+      </div>
+      <div class="project-arrow">↗</div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-eyebrow">Work history</div>
+  <h2 class="section-title">Experience</h2>
+
+  <!-- EdgeZen Labs - Current -->
+  <div class="exp-card" style="margin-bottom:12px;">
+    <div class="exp-meta">
+      <div>
+        <div class="exp-role">Software Engineer Intern</div>
+        <div class="exp-company">EdgeZen Labs · Remote / Hybrid</div>
+      </div>
+      <div class="exp-date">June 2026 – Present &nbsp;<span style="background:var(--accent);color:#0B0E13;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:0.05em;">CURRENT</span></div>
+    </div>
+    <ul class="exp-bullets">
+      <li>Working as a Software Engineer Intern at EdgeZen Labs, a technology-focused software development company.</li>
+      <li>Involved in web, mobile, cloud, data, and AI domain projects as part of a cross-functional team.</li>
+      <li>Contributing to application development, testing, and bug identification across multiple platforms.</li>
+    </ul>
+  </div>
+
+  <div class="exp-card">
+    <div class="exp-meta">
+      <div>
+        <div class="exp-role">Python Full Stack Development Intern</div>
+        <div class="exp-company">RETECH Solutions Pvt. Ltd · Tambaram, Chennai</div>
+      </div>
+      <div class="exp-date">Dec 2023 – Jan 2024</div>
+    </div>
+    <ul class="exp-bullets">
+      <li>Built a complete Car Rental and Booking System using Python, Django, HTML, CSS, and JavaScript.</li>
+      <li>Implemented user authentication, booking management, and vehicle availability tracking.</li>
+      <li>Integrated MySQL database to manage vehicle records, booking history, and user accounts.</li>
+      <li>Developed RESTful backend logic and a mobile-responsive frontend from scratch.</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-eyebrow">Background</div>
+  <h2 class="section-title">Education</h2>
+  <div class="edu-grid">
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">BCA — Bachelor of Computer Applications</div>
+        <div class="edu-school">Lakshmi Bangaru Arts and Science College, University of Madras</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <span class="edu-badge">74%</span>
+        <span class="edu-year">2022 – 2025</span>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">HSC</div>
+        <div class="edu-school">Govt. Hr. Sec. School, Marudadu, Vandavasi, Tiruvannamalai</div>
+      </div>
+      <span class="edu-year">2021 – 2022</span>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">SSLC</div>
+        <div class="edu-school">RCM High School, Vandavasi, Tiruvannamalai</div>
+      </div>
+      <span class="edu-year">2019 – 2020</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-eyebrow">Credentials</div>
+  <h2 class="section-title">Certifications</h2>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-issuer">QSpiders · Vadapalani</div>
+      <div class="cert-name">Python Full Stack Development</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-issuer">RETECH Solutions · Tambaram</div>
+      <div class="cert-name">Python Full Stack Development</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-issuer">Oracle · Naan Mudhalvan</div>
+      <div class="cert-name">Cloud Architecture</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-issuer">MongoDB · Naan Mudhalvan</div>
+      <div class="cert-name">Frontend Development & Data Administration</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="section-eyebrow" style="justify-content:center;display:flex;">Let's connect</div>
+  <h2 class="contact-title">Currently Working & Open to Grow</h2>
+  <p class="contact-sub">
+    Currently working as a Software Engineer Intern at EdgeZen Labs. Open to full-time opportunities,
+    freelance projects, and collaborations in Python and Django development.
+    Feel free to reach out!
+  </p>
+  <div class="contact-links">
+    <a href="https://mail.google.com/mail/?view=cm&to=riyasmugasin@gmail.com&su=Opportunity%20for%20Mugasin%20M&body=Hi%20Mugasin%2C%0A%0A" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> riyasmugasin@gmail.com</a>
+    <a href="tel:+919080183671" class="btn btn-outline">+91 90801 83671</a>
+    <a href="https://www.linkedin.com/in/mugasin-m-12b684316" target="_blank" rel="noopener" class="btn btn-outline" style="display:inline-flex;align-items:center;gap:8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn ↗</a>
+    <a href="https://github.com/MUGASIN" target="_blank" rel="noopener" class="btn btn-outline" style="display:inline-flex;align-items:center;gap:8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> GitHub ↗</a>
+  </div>
+</div>
+
+<footer>
+  Built by Mugasin M &nbsp;·&nbsp; Chennai, Tamil Nadu &nbsp;·&nbsp; 2026
+</footer>
+
+
+
+
+
+
+<!-- PROJECT MODAL -->
+<div id="project-modal" class="modal-overlay" onclick="closeModal('project-modal')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal('project-modal')">✕</button>
+    <div id="modal-num" class="project-num" style="margin-bottom:10px;"></div>
+    <h3 id="modal-name" class="modal-title"></h3>
+    <p id="modal-desc" class="modal-desc"></p>
+    <div id="modal-features" class="modal-features"></div>
+    <div id="modal-stack" class="project-stack" style="margin-top:20px;"></div>
+    <div class="modal-actions">
+      <button id="modal-github" class="btn btn-outline" style="font-size:13px;" onclick="openGitHub()">View on GitHub ↗</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT MODAL -->
+<div id="contact-modal" class="modal-overlay" onclick="closeModal('contact-modal')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal('contact-modal')">✕</button>
+    <div class="section-eyebrow" style="margin-bottom:8px;">Let's connect</div>
+    <h3 class="modal-title">Get in touch</h3>
+    <p class="modal-desc">I'm actively looking for entry-level Python/Django roles in Chennai. Reach out via any channel below.</p>
+    <div class="contact-options">
+      <button class="contact-option" onclick="handleContact('email')">
+        <span class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+        <div>
+          <div class="contact-option-label">Email</div>
+          <div class="contact-option-val">riyasmugasin@gmail.com</div>
+        </div>
+      </a>
+      <button class="contact-option" onclick="handleContact('phone')">
+        <span class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <div>
+          <div class="contact-option-label">Phone</div>
+          <div class="contact-option-val">+91 90801 83671</div>
+        </div>
+      </a>
+      <button class="contact-option" onclick="handleContact('linkedin')">
+        <span class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+        <div>
+          <div class="contact-option-label">LinkedIn</div>
+          <div class="contact-option-val">mugasin-m-12b684316</div>
+        </div>
+      </a>
+      <button class="contact-option" onclick="handleContact('github')">
+        <span class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></span>
+        <div>
+          <div class="contact-option-label">GitHub</div>
+          <div class="contact-option-val">github.com/MUGASIN</div>
+        </div>
+      </a>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="sendEmail()">Send an email</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
