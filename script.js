@@ -124,6 +124,19 @@
       stack: ['Python', 'Django', 'MySQL', 'OOP', 'MVT', 'Bootstrap'],
       github: 'https://github.com/MUGASIN/plant_nursery'
     },
+    {
+      num: '04',
+      name: 'MAS Milk Society — Dairy Cooperative Web App',
+      desc: 'A React SPA for a dairy cooperative with a product catalog, cart, and WhatsApp-based checkout with auto-filled delivery addresses. Mobile-first UI with responsive navigation, scroll animations, and static deployment.',
+      features: [
+        ' Built a static React SPA for a dairy cooperative with a product catalog and variant-based cart system',
+        ' Integrated WhatsApp-based checkout flow with dual `wa.me` deep links for seamless ordering',
+        ' Implemented HTML5 Geolocation and Nominatim reverse geocoding to auto-fill delivery addresses',
+        ' Delivered a mobile-first UI with responsive navigation, scroll animations, and static deployment',
+      ],
+      stack: ['React', 'Vite', 'React Router', 'Plain CSS', 'WhatsApp API', 'Nominatim API'],
+      github: 'https://github.com/MUGASIN/manoj-milk-society'
+    },
     
   ];
 
